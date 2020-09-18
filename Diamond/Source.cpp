@@ -1,16 +1,25 @@
 #include <stdio.h>
 #include <math.h>
+void drawDiamond(int);
 
 int main()
 {
-	int num, x, y;
+	int num;
 	scanf_s("%d", &num);
 
-	for (y = num-1; y >= -(num-1); y--)
+	drawDiamond(num);
+
+	return 0;
+}
+
+void drawDiamond(int n)
+{
+	int  x, y;
+	for (y = n - 1; y >= -(n - 1); y--)
 	{
-		for (x = -(num - 1); x <= num - 1;x++)
+		for (x = -(n - 1); x <= n - 1;x++)
 		{
-			if (abs(x) + abs(y) < num)
+			if (abs(x) + abs(y) < n)
 			{
 				printf("A");
 			}
@@ -21,5 +30,4 @@ int main()
 		}
 		printf("\n");
 	}
-	return 0;
 }
